@@ -32,7 +32,7 @@ public class MovementService {
         TimeZone timeZone = TimeZone.getTimeZone("America/Bogota");
         Date localDate = new Date(System.currentTimeMillis() + timeZone.getRawOffset());
         logger.info("Intentando realizar la entrada al parqueadero para la placa: {}", movementDTO.getPlate());
-        if(movementRepository.findByPlateAndState(movementDTO.getPlate(), movementDTO.getState()) != null && movementDTO.getState() != 0){
+        if(movementRepository.findByPlateAndState(movementDTO.getPlate(), movementDTO.getState()) == null && movementDTO.getState() == 0){
             Movements movements = new Movements(
                     movementDTO.getVehicleType(),
                     movementDTO.getPlate(),

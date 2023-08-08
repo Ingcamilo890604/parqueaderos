@@ -30,7 +30,7 @@ public class SqsServiceTest {
     public void setup() {
         MockitoAnnotations.openMocks(this);
         when(awsClient.getAWSCredentials()).thenReturn(null);
-        sqsService = new SqsService(awsClient, amazonSQS);
+        sqsService = new SqsService(awsClient);
     }
 
     @Test

@@ -19,9 +19,9 @@ public class SqsService {
     private final AWSClient awsClient;
     public AmazonSQS amazonSQS;
 
-    public SqsService(AWSClient awsClient, AmazonSQS amazonSQS) {
+    public SqsService(AWSClient awsClient) {
         this.awsClient = awsClient;
-        this.amazonSQS = amazonSQS;
+
     }
 
     public AmazonSQS getAmazonSQS() {
